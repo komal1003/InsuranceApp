@@ -1,0 +1,34 @@
+<!-- Age Prompt Modal -->
+<div *ngIf="showAgePrompt" class="modal-backdrop">
+  <div class="modal-content text-center p-4">
+    <h4>Enter your age to continue</h4>
+    <input type="number" [(ngModel)]="age" class="form-control my-3" placeholder="Enter age" />
+    <button class="btn btn-primary" (click)="submitAge()">Submit</button>
+  </div>
+</div>
+
+<!-- Plans Page -->
+<div *ngIf="!showAgePrompt" class="container mt-4">
+  <h2 class="mb-4">Available Insurance Plans</h2>
+
+  <!-- Search Bar -->
+  <div class="input-group mb-4">
+    <input type="text" [(ngModel)]="searchId" class="form-control" placeholder="Search by Plan ID" />
+    <button class="btn btn-outline-secondary" (click)="searchPlan()">Search</button>
+  </div>
+
+  <!-- Plans List -->
+  <div *ngIf="filteredPlans.length === 0" class="alert alert-warning">
+    No plans found.
+  </div>
+
+  <div *ngFor="let plan of filteredPlans" class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title">{{ plan.planName }}</h5>
+      <p><strong>Plan ID:</strong> {{ plan.planId }}</p>
+      <p><strong>Description:</strong> {{ plan.description }}</p>
+      <p><strong>Cost:</strong> ₹{{ plan.baseAmt }}</p>
+      <button class="btn btn-success mt-2" (click)="bookPlan(plan)">Book</button>
+    </div>
+  </div>
+</div>

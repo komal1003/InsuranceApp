@@ -1,0 +1,126 @@
+<div class="container mt-4">
+  <h2 class="mb-4 text-center">Complete Your Booking</h2>
+
+  <form (ngSubmit)="submitBooking()" #bookingForm="ngForm">
+    <!-- Plan Details (Read-only) -->
+    <div class="card mb-4">
+      <div class="card-body">
+        <h5 class="card-title">Plan Details</h5>
+        <p><strong>Plan ID:</strong> {{ bookingData.planId }}</p>
+        <p><strong>Plan Name:</strong> {{ bookingData.planName }}</p>
+        <p><strong>Validity:</strong> {{ bookingData.validity }} days</p>
+        <p><strong>Premium Amount:</strong> ₹{{ bookingData.premiumAmt }}</p>
+      </div>
+    </div>
+
+    <!-- Personal Information -->
+    <div class="mb-3">
+      <label for="name" class="form-label">Full Name</label>
+      <input
+        type="text"
+        id="name"
+        class="form-control"
+        [(ngModel)]="bookingData.name"
+        name="name"
+        required
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="city" class="form-label">City</label>
+      <input
+        type="text"
+        id="city"
+        class="form-control"
+        [(ngModel)]="bookingData.city"
+        name="city"
+        required
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="phone" class="form-label">Phone</label>
+      <input
+        type="text"
+        id="phone"
+        class="form-control"
+        [(ngModel)]="bookingData.phone"
+        name="phone"
+        required
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input
+        type="email"
+        id="email"
+        class="form-control"
+        [(ngModel)]="bookingData.email"
+        name="email"
+        required
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="age" class="form-label">Age</label>
+      <input
+        type="number"
+        id="age"
+        class="form-control"
+        [(ngModel)]="bookingData.age"
+        name="age"
+        required
+        readonly
+      />
+    </div>
+
+    <!-- Payment Information -->
+    <div class="mb-3">
+      <label for="paymentMode" class="form-label">Payment Mode</label>
+      <select
+        id="paymentMode"
+        class="form-select"
+        [(ngModel)]="bookingData.paymentMode"
+        name="paymentMode"
+        required
+      >
+        <option value="">Select</option>
+        <option value="Credit Card">Credit Card</option>
+        <option value="Debit Card">Debit Card</option>
+        <option value="Net Banking">Net Banking</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="cardNumber" class="form-label">Card Number</label>
+      <input
+        type="text"
+        id="cardNumber"
+        class="form-control"
+        [(ngModel)]="bookingData.cardNumber"
+        name="cardNumber"
+        required
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="paymentFreq" class="form-label">Payment Frequency</label>
+      <select
+        id="paymentFreq"
+        class="form-select"
+        [(ngModel)]="bookingData.paymentFreq"
+        name="paymentFreq"
+        required
+      >
+        <option value="">Select</option>
+        <option value="Monthly">Monthly</option>
+        <option value="Quarterly">Quarterly</option>
+        <option value="Half Yearly">Half Yearly</option>
+        <option value="Yearly">Yearly</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary w-100">Submit Booking</button>
+  </form>
+</div>

@@ -1,0 +1,57 @@
+{
+  "plans": [
+    {
+      "planId": 1,
+      "planName": "Care Life Plan",
+      "description": "provides instant coverage with emergency service like ambulance, specialist and consultation and complete assistance",
+      "baseAmt": 1350,
+      "validity": 30
+    },
+    {
+      "planId": 2,
+      "planName": "Good Health Plan",
+      "description": "Provides Ambulance facility with flexible payment option",
+      "baseAmt": 2000,
+      "validity": 34
+    },
+    {
+      "planId": 3,
+      "planName": "Education plan ",
+      "description": "provides loan for education and accessibilty for rural children willing to study and develop ",
+      "baseAmt": 30000,
+      "validity": 10
+    }
+  ],
+  "bookings": [
+    {
+      "id": 1,
+      "name": "Sreya ",
+      "city": "Bangalore",
+      "phone": "7022453790",
+      "email": "sreyanaidu@gmail.com",
+      "age": 39,
+      "planId": 1,
+      "planName": "Education plan ",
+      "validity": 10,
+      "paymentMode": "Credit Card",
+      "cardNumber": "1213-2345-4383",
+      "premiumAmt": 36000,
+      "paymentFreq": "Half Yearly"
+    },
+    {
+      "id": 2,
+      "name": "komala",
+      "city": "Bangalore",
+      "phone": "07022453790",
+      "email": "naidu@gmail.com",
+      "age": 35,
+      "planId": 1,
+      "planName": "Care Life Plan",
+      "validity": 30,
+      "paymentMode": "Net Banking",
+      "cardNumber": "1239-0987-5467",
+      "premiumAmt": 1620,
+      "paymentFreq": "Yearly"
+    }
+  ]
+}
