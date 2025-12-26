@@ -1,0 +1,4 @@
+Front end 
+    npx ng serve 
+for backend
+     npx json-server --watch -p 3333 db.json
