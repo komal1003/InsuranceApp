@@ -1,0 +1,321 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f7fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Age Prompt Modal */
+.age-prompt-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.age-prompt-card {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+}
+
+.age-prompt-title {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+}
+
+.age-prompt-subtitle {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: #7f8c8d;
+}
+
+.age-form {
+  margin-bottom: 1rem;
+}
+
+.input-group-custom {
+  margin-bottom: 1rem;
+}
+
+.input-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #34495e;
+}
+
+.age-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #bdc3c7;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.age-input:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background-color: #2980b9;
+}
+
+.submit-btn:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+.age-requirement {
+  font-size: 0.9rem;
+  color: #e74c3c;
+  margin-top: 1rem;
+}
+
+/* Plans Container */
+.plans-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.plans-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.plans-header h2 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.plans-header p {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+}
+
+/* Search Section */
+.search-section {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.search-bar {
+  display: flex;
+  max-width: 500px;
+  width: 100%;
+}
+
+.search-input {
+  flex: 1;
+  padding: 0.75rem;
+  border: 1px solid #bdc3c7;
+  border-radius: 4px 0 0 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.search-btn {
+  padding: 0.75rem 1rem;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+}
+
+.search-btn:hover {
+  background-color: #2980b9;
+}
+
+.search-icon {
+  margin-right: 0.5rem;
+}
+
+/* No Plans Message */
+.no-plans-message {
+  text-align: center;
+  padding: 3rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.no-plans-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.no-plans-message h3 {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.no-plans-message p {
+  color: #7f8c8d;
+}
+
+/* Plans Grid */
+.plans-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.plan-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.plan-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.plan-header {
+  margin-bottom: 1rem;
+}
+
+.plan-name {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 0.25rem;
+}
+
+.plan-id {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+}
+
+.plan-description {
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+.plan-details {
+  margin-bottom: 1.5rem;
+}
+
+.plan-price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.price-label {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+}
+
+.price-amount {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #27ae60;
+}
+
+.price-period {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+}
+
+.plan-actions {
+  text-align: center;
+}
+
+.book-btn {
+  padding: 0.75rem 1.5rem;
+  background-color: #27ae60;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.book-btn:hover {
+  background-color: #229954;
+}
+
+.arrow-icon {
+  font-size: 1.2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .plans-container {
+    padding: 1rem;
+  }
+
+  .plans-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .plans-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .search-bar {
+    flex-direction: column;
+  }
+
+  .search-input {
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+  }
+
+  .search-btn {
+    border-radius: 4px;
+    justify-content: center;
+  }
+}

@@ -16,4 +16,13 @@ export class Confirmationpage
     const nav = this.router.getCurrentNavigation();
     this.bookingData = nav?.extras?.state?.['booking'];
   }
+
+  downloadConfirmation(): void {
+    // Placeholder for download functionality
+    alert('Download functionality will be implemented');
+  }
+
+  goHome(): void {
+    this.router.navigate(['/']);
+  }
 }

@@ -33,10 +33,10 @@ export class Plans implements OnInit
     if(this.age!=null && this.age>=30)
     {
       this.showAgePrompt = false;
-   
+
     }
     else{
-      this.router.navigate(['/home']);
+      alert('You must be 30 or older to proceed.');
     }
   }
   loadPlans(): void

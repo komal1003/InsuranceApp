@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BookingRestApiService } from '../shared/bookingRest-api.service';
 import { booking } from '../shared/booking';
 import { FormsModule } from '@angular/forms';
-
+ 
 @Component({
   selector: 'app-booking',
-  imports: [FormsModule],
+  standalone: true,
+  imports: [CommonModule,FormsModule],
   templateUrl: './booking.html',
   styleUrl: './booking.css',
 })

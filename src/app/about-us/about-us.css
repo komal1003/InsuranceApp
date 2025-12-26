@@ -1,0 +1,116 @@
+/* About Container */
+.about-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background-color: #ffffff;
+  color: #333;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.4;
+}
+
+/* About Content */
+.about-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Main Title */
+.about-content h1 {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #2563eb;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Subtitle */
+.about-content .subtitle {
+  font-size: 1.2em;
+  color: #666;
+  text-align: center;
+  margin-bottom: 30px;
+  font-style: italic;
+}
+
+/* Section Headings */
+.about-content h2 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #000000;
+  margin-top: 25px;
+  margin-bottom: 8px;
+}
+/* Paragraphs */
+.about-content p {
+  font-size: 1em;
+  line-height: 1.5;
+  margin-bottom: 8px;
+  color: #555;
+}
+
+/* Contact Information */
+.contact-info {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.contact-info p {
+  margin-bottom: 5px;
+  font-size: 0.95em;
+}
+
+.contact-info p:last-child {
+  margin-bottom: 0;
+}
+
+/* Features List */
+.about-content ul {
+  margin-bottom: 8px;
+}
+
+.about-content li {
+  margin-bottom: 5px;
+  padding-left: 20px;
+  position: relative;
+  color: #555;
+}
+
+.about-content li:before {
+  content: "";
+  color: #10b981;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-container {
+    padding: 20px 15px;
+  }
+
+  .about-content h1 {
+    font-size: 2em;
+  }
+
+  .about-content h2 {
+    font-size: 1.5em;
+  }
+
+  .about-content p {
+    font-size: 0.95em;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-content h1 {
+    font-size: 1.8em;
+  }
+
+  .about-content h2 {
+    font-size: 1.3em;
+  }
+}

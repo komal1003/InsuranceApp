@@ -1,34 +1,95 @@
 <!-- Age Prompt Modal -->
-<div *ngIf="showAgePrompt" class="modal-backdrop">
-  <div class="modal-content text-center p-4">
-    <h4>Enter your age to continue</h4>
-    <input type="number" [(ngModel)]="age" class="form-control my-3" placeholder="Enter age" />
-    <button class="btn btn-primary" (click)="submitAge()">Submit</button>
+<section *ngIf="showAgePrompt" class="age-prompt-container">
+  <div class="age-prompt-card">
+    <h2 class="age-prompt-title">Welcome to Raindrops Insurance</h2>
+    <p class="age-prompt-subtitle">Please enter your age to view our insurance plans</p>
+
+    <form class="age-form">
+      <div class="input-group-custom">
+        <label for="age-input" class="input-label">Your Age</label>
+        <input
+          id="age-input"
+          type="number"
+          [(ngModel)]="age"
+          name="age"
+          class="age-input"
+          placeholder="Enter your age"
+          min="1"
+          max="120"
+          required
+        />
+      </div>
+
+      <button
+        type="button"
+        class="submit-btn"
+        [disabled]="!age || age < 30"
+        (click)="submitAge()"
+      >
+        Continue
+      </button>
+    </form>
+
+    <p class="age-requirement">You must be 30 years or older to proceed.</p>
   </div>
-</div>
+</section>
 
 <!-- Plans Page -->
-<div *ngIf="!showAgePrompt" class="container mt-4">
-  <h2 class="mb-4">Available Insurance Plans</h2>
+<main *ngIf="!showAgePrompt" class="plans-container">
+  <header class="plans-header">
+    <h2>Available Insurance Plans</h2>
+    <p>Choose the perfect plan for your health and life insurance needs</p>
+  </header>
 
   <!-- Search Bar -->
-  <div class="input-group mb-4">
-    <input type="text" [(ngModel)]="searchId" class="form-control" placeholder="Search by Plan ID" />
-    <button class="btn btn-outline-secondary" (click)="searchPlan()">Search</button>
-  </div>
+  <section class="search-section">
+    <div class="search-bar">
+      <input
+        type="text"
+        [(ngModel)]="searchId"
+        class="search-input"
+        placeholder="Search by Plan ID"
+        (keydown.enter)="searchPlan()"
+      />
+      <button class="search-btn" (click)="searchPlan()">
+        <span class="search-icon">🔍</span>
+        Search
+      </button>
+    </div>
+  </section>
 
   <!-- Plans List -->
-  <div *ngIf="filteredPlans.length === 0" class="alert alert-warning">
-    No plans found.
-  </div>
+  <section *ngIf="filteredPlans.length === 0" class="no-plans-message">
+    <div class="no-plans-icon">📋</div>
+    <h3>No plans found</h3>
+    <p>Try adjusting your search criteria or browse all available plans.</p>
+  </section>
 
-  <div *ngFor="let plan of filteredPlans" class="card mb-3">
-    <div class="card-body">
-      <h5 class="card-title">{{ plan.planName }}</h5>
-      <p><strong>Plan ID:</strong> {{ plan.planId }}</p>
-      <p><strong>Description:</strong> {{ plan.description }}</p>
-      <p><strong>Cost:</strong> ₹{{ plan.baseAmt }}</p>
-      <button class="btn btn-success mt-2" (click)="bookPlan(plan)">Book</button>
-    </div>
-  </div>
-</div>
+  <section *ngIf="filteredPlans.length > 0" class="plans-grid">
+    <article *ngFor="let plan of filteredPlans" class="plan-card">
+      <header class="plan-header">
+        <div class="plan-name">{{ plan.planName }}</div>
+        <div class="plan-id">Plan ID: {{ plan.planId }}</div>
+      </header>
+
+      <div class="plan-description">
+        {{ plan.description }}
+      </div>
+
+      <div class="plan-details">
+        <div class="plan-price">
+          <span class="price-label">Starting from</span>
+          <span class="price-amount">₹{{ plan.baseAmt }}</span>
+          <span class="price-period">/year</span>
+        </div>
+      </div>
+
+      <div class="plan-actions">
+        <button class="book-btn" (click)="bookPlan(plan)">
+          Book Now
+          <span class="arrow-icon">→</span>
+        </button>
+      </div>
+    </article>
+  </section>
+</main>
